@@ -5,7 +5,7 @@ using UnityEngine;
 public class Object : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float Fall = -30f;
+    private float Fall = -100f;
 
     private void OnCollisionEnter(Collision collision)
     {
