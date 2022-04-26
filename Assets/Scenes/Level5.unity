@@ -3074,7 +3074,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2411336256108030659, guid: 9ddc470cb331d6644a182c333e1ffc61, type: 3}
       propertyPath: NextLevel
-      value: Menu
+      value: End
       objectReference: {fileID: 0}
     - target: {fileID: 2411336256672931348, guid: 9ddc470cb331d6644a182c333e1ffc61, type: 3}
       propertyPath: m_Name

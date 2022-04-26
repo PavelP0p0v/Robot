@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74df449f81e66d649b8f737774cb389a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level1: Level1
+  NextLevel: Menu
 --- !u!1 &2411336256611236644
 GameObject:
   m_ObjectHideFlags: 0
@@ -4928,7 +4928,7 @@ GameObject:
   - component: {fileID: 2411336256672931355}
   m_Layer: 0
   m_Name: Exit
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5027,6 +5027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e807912662db84aac2c31c9c8fddd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  R: 1
   TrueUp: 1
   Speed1: 0.1
   d: 0.2
