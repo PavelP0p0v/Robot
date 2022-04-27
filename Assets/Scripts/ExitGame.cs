@@ -11,7 +11,7 @@ public class ExitGame : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Application.Quit();    
+            Application.Quit();
 
         }
     }
