@@ -37,7 +37,7 @@ public class Platform : MonoBehaviour
         if (R == true)
         {
             Speed1 = Random.Range(0.1f, 0.3f);
-
+            d = Random.Range(0.2f, 0.5f);
         }
         
         if (TrueUp == true)
