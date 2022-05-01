@@ -10,32 +10,34 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject StartPosition;
 
-   [SerializeField]
-    private List<AudioClip> VolumeList;
+   
 
     private float BorderFall = -20f;
 
     private Rigidbody rb;
-    private AudioSource audio;
+   
     public float Speed = 5.0f;
     public float JumpStrange = 5.0f;
 
     private bool isJump = true;
     private bool z = false;
 
-    private bool musicCan = true;
-    private float timeResetCanMusic = 0;
-    private float needTimePlay = 0; 
+    
 
     void Start()
     {
         Cursor.visible = z;
         rb = GetComponent<Rigidbody>();
-        audio = GetComponent<AudioSource>();
+        
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            z = !z;
+            Cursor.visible = z;
+        }
         float moveV = Input.GetAxis("Vertical");
 
 
@@ -50,21 +52,14 @@ public class PlayerController : MonoBehaviour
 
         float moveH = Input.GetAxis("Horizontal");
 
-        const float magnitude = 0.05f;
+       
 
         /*if ((moveV > magnitude || moveV < -magnitude) || (moveH > magnitude || moveH < -magnitude))
         {
             PlayStepPlayer();
         }*/
 
-        if (!musicCan) {
-            timeResetCanMusic += Time.deltaTime;
-        }
-        if (!musicCan && (timeResetCanMusic >= needTimePlay)) {
-            needTimePlay = 0;
-            timeResetCanMusic = 0;
-            musicCan = !musicCan;
-        }
+       
 
 
 
@@ -91,11 +86,7 @@ public class PlayerController : MonoBehaviour
             transform.parent = collision.transform;
             isJump = false;
         }
-        if (collision.gameObject.tag == "Object")
-        {
-
-            PlayStepPlayer();
-        }
+        
     }
     private void OnCollisionExit(Collision collision)
     {
@@ -106,15 +97,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void PlayStepPlayer() {
-        if (musicCan)
-        {
-            musicCan = !musicCan;
-            audio.pitch = 2;
-            needTimePlay = VolumeList[0].length;
-            audio.PlayOneShot(VolumeList[0]);
-        }
-    }
+    
 
 
    
