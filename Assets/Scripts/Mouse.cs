@@ -4,9 +4,11 @@ using System.Collections.Generic;
 
 public class Mouse : MonoBehaviour
 {
+    
     public GameObject player; // Перетащить в капсулу на переднем плане
     Vector3 rot = new Vector3(0, 0, 0); // Сначала определите переменную rot типа Vectory3 (0,0,0)
-    public float speed; // Это чувствительность мыши
+    [SerializeField]
+    public float speed = 1.5f; // Это чувствительность мыши
     void Start()
     {
 
@@ -14,6 +16,8 @@ public class Mouse : MonoBehaviour
 
     void Update()
     {
+        
+        
         float MouseX = Input.GetAxis("Mouse X") * speed;
         float MouseY = Input.GetAxis("Mouse Y") * speed;
         rot.x = rot.x - MouseY;

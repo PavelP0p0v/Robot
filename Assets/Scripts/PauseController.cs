@@ -6,12 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class PauseController : MonoBehaviour
 {
+    private bool z = false;
     void Update()
     {
          if (Input.GetKeyDown(KeyCode.Escape)){
             PauseChange();
          }
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameObject temp = GameObject.Find("Main Camera");
+            Mouse other = temp.GetComponent<Mouse>();
+            other.enabled = z;
+            z = !z;
+           
+        }
     }
     public string NextLevel;
     [SerializeField]
@@ -45,6 +53,10 @@ public class PauseController : MonoBehaviour
     }
     private void OnStart()
     {
+        GameObject temp = GameObject.Find("Main Camera");
+        Mouse other = temp.GetComponent<Mouse>();
+        other.enabled = z;
+        z = !z;
         PauseChange();
         Debug.Log("Продолжить");
     }
